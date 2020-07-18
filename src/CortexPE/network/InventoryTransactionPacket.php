@@ -55,6 +55,10 @@ class InventoryTransactionPacket extends PMInventoryTransactionPacket {
 			}
 		}
 
+                $this->transactionType = $this->getUnsignedVarInt();
+
+		$this->hasItemStackIds = $this->getBool();
+
 		$this->trData = new \stdClass();
 
 		switch($this->transactionType){
